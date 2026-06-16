@@ -247,8 +247,19 @@ nav.nav-open .nav-toggle span:nth-child(3) {
 .hero-title {
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   color: var(--accent-primary);
-  margin-bottom: 24px;
+  margin-bottom: 4px;
   font-weight: 500;
+}
+
+.hero-company {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.hero-company strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .hero-summary {
@@ -266,6 +277,62 @@ nav.nav-open .nav-toggle span:nth-child(3) {
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* ===== SCROLL INDICATOR ===== */
+.scroll-indicator {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+}
+
+.scroll-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.scroll-arrow span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid var(--accent-primary);
+  border-bottom: 2px solid var(--accent-primary);
+  transform: rotate(45deg);
+  animation: scrollBounce 2s infinite;
+}
+
+.scroll-arrow span:nth-child(2) {
+  animation-delay: 0.2s;
+  opacity: 0.5;
+}
+
+@keyframes scrollBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  40% {
+    transform: rotate(45deg) translateY(6px);
+  }
+  60% {
+    transform: rotate(45deg) translateY(3px);
+  }
 }
 
 /* ===== BUTTONS ===== */
